@@ -47,8 +47,9 @@ namespace AMM_LAB_v1_S15_16.Services
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(@"\tERROR {0}", ex.Message);
-                Console.WriteLine(ex.Message);
+                //Console.WriteLine(ex);
+                Debug.WriteLine(@"\tERROR {0}", ex);
+                System.Console.WriteLine(ex);
             }
 
             return Items;

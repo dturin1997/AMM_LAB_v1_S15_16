@@ -20,6 +20,9 @@ namespace AMM_LAB_v1_S15_16.Droid
     {
         public HttpClientHandler GetInsecureHandler()
         {
+            HttpClientHandler clientHandler = new HttpClientHandler();
+            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+            /*
             HttpClientHandler handler = new HttpClientHandler();
             handler.ServerCertificateCustomValidationCallback =
                 (message, cert, chain, errors) =>
@@ -28,7 +31,8 @@ namespace AMM_LAB_v1_S15_16.Droid
                         return true;
                     return errors == System.Net.Security.SslPolicyErrors.None;
                 };
-            return handler;
+            */
+            return clientHandler;
         }
     }
 }
