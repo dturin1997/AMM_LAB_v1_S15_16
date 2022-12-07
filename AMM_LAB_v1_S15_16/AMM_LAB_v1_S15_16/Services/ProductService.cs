@@ -54,5 +54,39 @@ namespace AMM_LAB_v1_S15_16.Services
 
             return Items;
         }
+
+        public async Task SaveProductItemAsync(Product item, bool isNewItem)
+        {
+            try
+            {
+                //Response es un objeto.
+                //Serializar
+                var id = item.id;
+                var json = JsonConvert.SerializeObject(item);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = null;
+                if (isNewItem)
+                {
+                    var uri = new Uri(string.Format(Constants.RestUrl, "Create"));
+                    response = await client.PostAsync(uri, content);
+                }
+                else
+                {
+                    var uri = new Uri(string.Format(Constants.RestUrl+$"{id}", "Edit"));
+                    response = await client.PutAsync(uri, content);
+                }
+
+                if (response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine(@"\tProduct successfully saved.");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"\tERROR {1}", ex.Message);
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AMM_LAB_v1_S15_16.ViewModels;
+using AMM_LAB_v1_S15_16.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +14,10 @@ namespace AMM_LAB_v1_S15_16.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProductPage : ContentPage
     {
-        public ProductPage()
+        public ProductPage(Product product)
         {
             InitializeComponent();
-            this.BindingContext = new ProductViewModel();
+            this.BindingContext = new ProductViewModel(product);
         }
     }
 }

@@ -55,7 +55,7 @@
                                         <Label
                                             Grid.Row="0"
                                             Grid.Column="1"
-                                            Text="{Binding Id}"/>
+                                            Text="{Binding id}"/>
 
                                         <Label
                                             Grid.Row="1"
@@ -66,7 +66,7 @@
                                         <Label 
                                             Grid.Row="1"
                                             Grid.Column="1"
-                                            Text="{Binding Name}"/>
+                                            Text="{Binding name}"/>
 
                                         <Label
                                             Grid.Row="2"
@@ -77,7 +77,7 @@
                                         <Label 
                                             Grid.Row="2"
                                             Grid.Column="1"
-                                            Text="{Binding Description}"/>
+                                            Text="{Binding description}"/>
 
                                         <Label
                                             Grid.Row="3"
@@ -88,7 +88,7 @@
                                         <Label
                                             Grid.Row="3"
                                             Grid.Column="1"
-                                            Text="{Binding ExpirationDate}"/>
+                                            Text="{Binding expirationDate}"/>
 
                                         <Label
                                             Grid.Row="4"
@@ -99,7 +99,7 @@
                                         <Label
                                             Grid.Row="4"
                                             Grid.Column="1"
-                                            Text="{Binding IsNew}"/>
+                                            Text="{Binding isNew}"/>
                                         <Label
                                             Grid.Row="5"
                                             Grid.Column="0"
@@ -109,7 +109,7 @@
                                         <Label
                                             Grid.Row="5"
                                             Grid.Column="1"
-                                            Text="{Binding Stock}"/>
+                                            Text="{Binding stock}"/>
                                         <Button
                                             Grid.Row="6"
                                             Grid.Column="0"

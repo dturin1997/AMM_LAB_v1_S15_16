@@ -1,4 +1,5 @@
 ﻿using AMM_LAB_v1_S15_16.Services;
+using AMM_LAB_v1_S15_16.Views;
 using AMM_LAB_v1_S15_16.Models;
 using System;
 using System.Collections.Generic;
@@ -37,15 +38,15 @@ namespace AMM_LAB_v1_S15_16.ViewModels
         #endregion Properties
 
         #region Command
-/*
-        public ICommand NeWStudentCommand
+
+        public ICommand NewProductCommand
         {
             get
             {
-                return new Command(NeWStudent);
+                return new Command(NeWProduct);
             }
         }
-*/
+
         public ICommand LoadProductsCommand
         {
             get
@@ -67,19 +68,19 @@ namespace AMM_LAB_v1_S15_16.ViewModels
             //get;
             //set;
         }
-        
-        public ICommand UpdateStudentCommand
+        */
+        public ICommand UpdateProductCommand
         {
             get
             {
                 return new Command(async (x) =>
                 {
-                    var item = (x as Student);
-                    await UpdateStudent(item);
+                    var item = (x as Product);
+                    await UpdateProduct(item);
                 });
             }
         }
-        */
+        
         #endregion
 
         #region Constructor
@@ -95,28 +96,29 @@ namespace AMM_LAB_v1_S15_16.ViewModels
 
 
         #region Methods
-        /*
-        private void NeWStudent()
+        
+        private void NeWProduct()
         {
-            Student student = new Student();
-            student.StudentId = 0;
-            student.LastName = "";
-            student.FirstName = "";
-            student.Adress = "";
-            student.Edad = 0;
+            Product product = new Product();
+            //product.Id = 0;
+            /*
+            product.Name = "";
+            product.Description = "";
+            product.ExpirationDate = DateTime.Today;
+            product.IsNew = false;
+            */
+            Application.Current.MainPage.Navigation.PushAsync(new ProductPage(product));
 
-            Application.Current.MainPage.Navigation.PushAsync(new StudentPage(student));
-
-            LoadStudents();
+            LoadProducts();
 
         }
         
-        private async Task UpdateStudent(Student student)
+        private async Task UpdateProduct(Product product)
         {
-            await Application.Current.MainPage.Navigation.PushAsync(new StudentPage(student));
+            await Application.Current.MainPage.Navigation.PushAsync(new ProductPage(product));
 
         }
-
+        /*
         private void DeleteStudent(Student student)
         {
 

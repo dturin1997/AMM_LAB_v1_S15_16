@@ -4,9 +4,44 @@
              x:Class="AMM_LAB_v1_S15_16.Views.ProductPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout.Padding>
+                <OnPlatform 
+                    x:TypeArguments="Thickness"
+                    Android="20"
+                    iOS="50"/>
+            </StackLayout.Padding>
+
+            <Label 
+                Text="Name"/>
+            <Entry 
+                Placeholder="Name"
+                Text="{Binding Name}"/>
+            <Label
+                Text="Description"/>
+            <Entry 
+                Placeholder="Description"
+                Text="{Binding Description}"/>
+
+            <Label
+                Text="Expiration Date"/>
+            <Entry 
+                Placeholder="Expiration Date"
+                Text="{Binding ExpirationDate}"/>
+
+            <Label
+                Text="Is New"/>
+            <Entry 
+                Placeholder="Is New"
+                Text="{Binding IsNew}"/>
+            <Label
+                Text="Stock"/>
+            <Entry 
+                Placeholder="Stock"
+                Text="{Binding Stock}"/>
+
+            <Button
+                Text="Guardar"
+                Command="{Binding CreateCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
