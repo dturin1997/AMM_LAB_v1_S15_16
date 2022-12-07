@@ -10,5 +10,6 @@ namespace AMM_LAB_v1_S15_16.Interfaces
     {
         Task<List<Product>> RefreshDataAsync();
         Task SaveProductItemAsync(Product item, bool isNewItem);
+        Task DeleteProductItemAsync(int id);
     }
 }

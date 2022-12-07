@@ -88,5 +88,25 @@ namespace AMM_LAB_v1_S15_16.Services
                 Debug.WriteLine(@"\tERROR {1}", ex.Message);
             }
         }
+
+        public async Task DeleteProductItemAsync(int id)
+        {
+            var uri = new Uri(string.Format(Constants.RestUrl + $"{id}", "Delete"));
+
+            try
+            {
+                var response = await client.DeleteAsync(uri);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine(@"\tTodoItem successfully deleted.");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"\tERROR {0}", ex.Message);
+            }
+        }
     }
 }

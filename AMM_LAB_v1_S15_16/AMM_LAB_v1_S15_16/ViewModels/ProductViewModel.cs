@@ -143,6 +143,7 @@ namespace AMM_LAB_v1_S15_16.ViewModels
                 this.Product = product;
                 this.Name = product.name;
                 this.Description = product.description;
+                
                 this.ExpirationDate = product.expirationDate;
                 this.IsNew = product.isNew;
                 this.Stock = product.stock;

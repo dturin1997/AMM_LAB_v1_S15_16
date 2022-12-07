@@ -54,21 +54,21 @@ namespace AMM_LAB_v1_S15_16.ViewModels
                 return new Command(LoadProducts);
             }
         }
-        /*
-        public ICommand DeleteStudentCommand
+        
+        public ICommand DeleteProductCommand
         {
             get
             {
                 return new Command((x) =>
                 {
-                    var item = (x as Student);
-                    DeleteStudent(item);
+                    var item = (x as Product);
+                    DeleteProduct(item);
                 });
             }
             //get;
             //set;
         }
-        */
+        
         public ICommand UpdateProductCommand
         {
             get
@@ -118,14 +118,14 @@ namespace AMM_LAB_v1_S15_16.ViewModels
             await Application.Current.MainPage.Navigation.PushAsync(new ProductPage(product));
 
         }
-        /*
-        private void DeleteStudent(Student student)
+        
+        private async void DeleteProduct(Product product)
         {
-
-            this.dataServiceStudents.Delete(student);
-            LoadStudents();
+            var id = product.id;
+            await this.dataServiceProducts.DeleteProductItemAsync(id);
+            LoadProducts();
         }
-        */
+        
         public async void LoadProducts()
         {
             var productsRest = await this.dataServiceProducts.RefreshDataAsync();
